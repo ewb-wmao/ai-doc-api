@@ -1,8 +1,8 @@
 :root {
   --app-topbar-height: 60px;
 
-  color: #17202a;
-  background: #f7f8fa;
+  color: var(--scalar-color-1, #17202a);
+  background: var(--scalar-background-1, #f7f8fa);
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -13,6 +13,7 @@
 }
 
 body {
+  background: var(--scalar-background-1, #f7f8fa);
   margin: 0;
 }
 
@@ -29,8 +30,9 @@ main {
 
 .topbar {
   align-items: center;
-  background: #ffffff;
-  border-bottom: 1px solid #dfe3e8;
+  background: var(--scalar-background-1, #ffffff);
+  border-bottom: 1px solid var(--scalar-border-color, #dfe3e8);
+  color: var(--scalar-color-1, #17202a);
   display: flex;
   gap: 24px;
   justify-content: space-between;
@@ -54,7 +56,7 @@ main {
 }
 
 .eyebrow {
-  color: #4d6b8a;
+  color: var(--scalar-color-2, #4d6b8a);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
@@ -80,7 +82,7 @@ h2 {
 }
 
 .field {
-  color: #45596d;
+  color: var(--scalar-color-2, #45596d);
   display: grid;
   font-size: 13px;
   font-weight: 650;
@@ -93,10 +95,10 @@ h2 {
 
 .field input,
 .field select {
-  background: #ffffff;
-  border: 1px solid #cbd5df;
+  background: var(--scalar-background-2, #ffffff);
+  border: 1px solid var(--scalar-border-color, #cbd5df);
   border-radius: 8px;
-  color: #17202a;
+  color: var(--scalar-color-1, #17202a);
   height: 34px;
   padding: 0 12px;
   width: 100%;
@@ -109,8 +111,13 @@ h2 {
       6px 6px no-repeat,
     linear-gradient(135deg, #52677b 50%, transparent 50%) right 10px top 17px /
       6px 6px no-repeat,
-    #ffffff;
+    var(--scalar-background-2, #ffffff);
   padding-right: 32px;
+}
+
+.field select option {
+  background: var(--scalar-background-1, #ffffff);
+  color: var(--scalar-color-1, #17202a);
 }
 
 .reference-panel {
