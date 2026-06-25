@@ -1,0 +1,19 @@
+type: object
+required:
+  - accountId
+  - fileName
+  - contentType
+properties:
+  accountId:
+    type: string
+    example: acc_10001
+  fileName:
+    type: string
+    example: invoice-2026-06.pdf
+  contentType:
+    type: string
+    example: application/pdf
+  sourceUrl:
+    type: string
+    format: uri
+    example: https://storage.example.com/invoice-2026-06.pdf

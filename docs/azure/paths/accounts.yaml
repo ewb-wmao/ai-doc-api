@@ -1,0 +1,29 @@
+paths:
+  /accounts/{accountId}:
+    get:
+      operationId: getAzureAccount
+      summary: Get account profile
+      description: Returns the account profile used by Azure-facing services.
+      tags:
+        - account
+      x-category: Account Management
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: acc_10001
+      responses:
+        '200':
+          description: Account profile found.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/Account.yaml
+        '404':
+          description: Account was not found.
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/Error.yaml

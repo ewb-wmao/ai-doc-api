@@ -1,0 +1,19 @@
+type: object
+required:
+  - id
+  - status
+properties:
+  id:
+    type: string
+    example: ord_30001
+  status:
+    type: string
+    enum:
+      - accepted
+      - routing
+      - completed
+      - failed
+    example: accepted
+  customerId:
+    type: string
+    example: cus_20001

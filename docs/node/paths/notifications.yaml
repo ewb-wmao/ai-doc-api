@@ -1,0 +1,28 @@
+paths:
+  /notifications:
+    post:
+      operationId: createNodeNotification
+      summary: Send notification
+      description: Sends a notification through the Node delivery service.
+      tags:
+        - notification
+      x-category: Notification Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/NotificationCreateRequest.yaml
+      responses:
+        '202':
+          description: Notification accepted.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/Notification.yaml
+        '400':
+          description: Invalid notification payload.
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/Error.yaml

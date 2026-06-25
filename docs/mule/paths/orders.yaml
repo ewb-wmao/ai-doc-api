@@ -1,0 +1,28 @@
+paths:
+  /orders:
+    post:
+      operationId: createMuleOrder
+      summary: Submit order
+      description: Submits an order into the Mule orchestration flow.
+      tags:
+        - order
+      x-category: Order Orchestration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/OrderCreateRequest.yaml
+      responses:
+        '202':
+          description: Order accepted for processing.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/Order.yaml
+        '400':
+          description: Invalid order payload.
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/Error.yaml

@@ -1,0 +1,29 @@
+paths:
+  /customers/{customerId}:
+    get:
+      operationId: getMuleCustomer
+      summary: Get integrated customer
+      description: Returns the customer record assembled from downstream systems.
+      tags:
+        - customer
+      x-category: Customer Integration
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: cus_20001
+      responses:
+        '200':
+          description: Integrated customer found.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/Customer.yaml
+        '404':
+          description: Customer was not found.
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/Error.yaml

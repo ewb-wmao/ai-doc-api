@@ -1,0 +1,23 @@
+type: object
+required:
+  - id
+  - displayName
+  - status
+properties:
+  id:
+    type: string
+    example: acc_10001
+  displayName:
+    type: string
+    example: Acme Operations
+  status:
+    type: string
+    enum:
+      - active
+      - suspended
+      - closed
+    example: active
+  createdAt:
+    type: string
+    format: date-time
+    example: '2026-06-24T18:00:00Z'

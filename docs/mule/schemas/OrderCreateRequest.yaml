@@ -1,0 +1,24 @@
+type: object
+required:
+  - customerId
+  - items
+properties:
+  customerId:
+    type: string
+    example: cus_20001
+  items:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required:
+        - sku
+        - quantity
+      properties:
+        sku:
+          type: string
+          example: sku_apple
+        quantity:
+          type: integer
+          minimum: 1
+          example: 2

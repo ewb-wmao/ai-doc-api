@@ -1,0 +1,18 @@
+type: object
+required:
+  - id
+  - status
+properties:
+  id:
+    type: string
+    example: ntf_50001
+  status:
+    type: string
+    enum:
+      - accepted
+      - delivered
+      - failed
+    example: accepted
+  userId:
+    type: string
+    example: usr_40001

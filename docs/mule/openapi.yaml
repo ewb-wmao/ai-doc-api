@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: Mule Business APIs
+  version: 1.0.0
+  description: Sample APIs for the Mule integration layer.
+  license:
+    name: Proprietary
+    url: https://acme.test/legal/api-license
+servers:
+  - url: https://mule-api.acme.test
+    description: Sample Mule gateway
+security:
+  - bearerAuth: []
+tags:
+  - name: customer
+    description: Customer integration APIs.
+  - name: order
+    description: Order orchestration APIs.
+paths:
+  /customers/{customerId}:
+    $ref: ./paths/customers.yaml#/paths/~1customers~1{customerId}
+  /orders:
+    $ref: ./paths/orders.yaml#/paths/~1orders
+components:
+  schemas:
+    Customer:
+      $ref: ./schemas/Customer.yaml
+    OrderCreateRequest:
+      $ref: ./schemas/OrderCreateRequest.yaml
+    Order:
+      $ref: ./schemas/Order.yaml
+    Error:
+      $ref: ../shared/schemas/Error.yaml
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

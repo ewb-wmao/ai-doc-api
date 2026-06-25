@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: Node Business APIs
+  version: 1.0.0
+  description: Sample APIs for the Node application service layer.
+  license:
+    name: Proprietary
+    url: https://acme.test/legal/api-license
+servers:
+  - url: https://node-api.acme.test
+    description: Sample Node service
+security:
+  - bearerAuth: []
+tags:
+  - name: user
+    description: User profile APIs.
+  - name: notification
+    description: Notification delivery APIs.
+paths:
+  /users/{userId}:
+    $ref: ./paths/users.yaml#/paths/~1users~1{userId}
+  /notifications:
+    $ref: ./paths/notifications.yaml#/paths/~1notifications
+components:
+  schemas:
+    User:
+      $ref: ./schemas/User.yaml
+    NotificationCreateRequest:
+      $ref: ./schemas/NotificationCreateRequest.yaml
+    Notification:
+      $ref: ./schemas/Notification.yaml
+    Error:
+      $ref: ../shared/schemas/Error.yaml
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

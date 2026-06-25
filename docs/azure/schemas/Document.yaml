@@ -1,0 +1,19 @@
+type: object
+required:
+  - id
+  - status
+properties:
+  id:
+    type: string
+    example: doc_90001
+  status:
+    type: string
+    enum:
+      - queued
+      - processing
+      - completed
+      - failed
+    example: queued
+  accountId:
+    type: string
+    example: acc_10001

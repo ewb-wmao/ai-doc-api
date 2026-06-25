@@ -1,0 +1,19 @@
+type: object
+required:
+  - id
+  - email
+  - displayName
+properties:
+  id:
+    type: string
+    example: usr_40001
+  email:
+    type: string
+    format: email
+    example: alex@example.com
+  displayName:
+    type: string
+    example: Alex Chen
+  locale:
+    type: string
+    example: en-US

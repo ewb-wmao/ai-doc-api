@@ -1,0 +1,29 @@
+paths:
+  /users/{userId}:
+    get:
+      operationId: getNodeUser
+      summary: Get user profile
+      description: Returns application user details owned by the Node layer.
+      tags:
+        - user
+      x-category: User Management
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: usr_40001
+      responses:
+        '200':
+          description: User profile found.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/User.yaml
+        '404':
+          description: User was not found.
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/Error.yaml

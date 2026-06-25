@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: Azure Business APIs
+  version: 1.0.0
+  description: Sample APIs for the Azure business layer.
+  license:
+    name: Proprietary
+    url: https://acme.test/legal/api-license
+servers:
+  - url: https://azure-api.acme.test
+    description: Sample Azure gateway
+security:
+  - bearerAuth: []
+tags:
+  - name: account
+    description: Account lookup and profile APIs.
+  - name: document
+    description: Document upload and processing APIs.
+paths:
+  /accounts/{accountId}:
+    $ref: ./paths/accounts.yaml#/paths/~1accounts~1{accountId}
+  /documents:
+    $ref: ./paths/documents.yaml#/paths/~1documents
+components:
+  schemas:
+    Account:
+      $ref: ./schemas/Account.yaml
+    DocumentCreateRequest:
+      $ref: ./schemas/DocumentCreateRequest.yaml
+    Document:
+      $ref: ./schemas/Document.yaml
+    Error:
+      $ref: ../shared/schemas/Error.yaml
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

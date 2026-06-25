@@ -1,0 +1,22 @@
+type: object
+required:
+  - id
+  - name
+  - segment
+properties:
+  id:
+    type: string
+    example: cus_20001
+  name:
+    type: string
+    example: Northwind Trading
+  segment:
+    type: string
+    example: enterprise
+  sourceSystems:
+    type: array
+    items:
+      type: string
+    example:
+      - crm
+      - billing

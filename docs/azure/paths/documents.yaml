@@ -1,0 +1,28 @@
+paths:
+  /documents:
+    post:
+      operationId: createAzureDocument
+      summary: Create document job
+      description: Creates a document processing job in the Azure layer.
+      tags:
+        - document
+      x-category: Document Processing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/DocumentCreateRequest.yaml
+      responses:
+        '201':
+          description: Document job created.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/Document.yaml
+        '400':
+          description: Invalid document payload.
+          content:
+            application/json:
+              schema:
+                $ref: ../../shared/schemas/Error.yaml

@@ -1,0 +1,19 @@
+type: object
+required:
+  - userId
+  - channel
+  - message
+properties:
+  userId:
+    type: string
+    example: usr_40001
+  channel:
+    type: string
+    enum:
+      - email
+      - sms
+      - push
+    example: email
+  message:
+    type: string
+    example: Your document is ready.

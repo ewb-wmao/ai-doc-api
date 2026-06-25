@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "API Docs: Dev Server",
+      "type": "shell",
+      "command": "/usr/bin/env",
+      "args": [
+        "PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+        "npm",
+        "run",
+        "dev",
+        "--",
+        "--host",
+        "0.0.0.0"
+      ],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": {
+          "regexp": ".",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "ready in"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "API Docs: Build",
+      "type": "shell",
+      "command": "/usr/bin/env",
+      "args": [
+        "PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+        "npm",
+        "run",
+        "build"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
